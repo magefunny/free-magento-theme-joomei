@@ -1,0 +1,131 @@
+<?php
+/**
+ * ThemeFunny
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the themefunny.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.themefunny.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ThemeFunny
+ * @package     ThemeFunny_PopupLogin
+ * @copyright   Copyright (c) ThemeFunny (https://www.themefunny.com/)
+ * @license     https://www.themefunny.com/LICENSE.txt
+ */
+$_config       = $this->helper('ThemeFunny\PopupContent\Helper\Data');
+$topcfg        = $_config->getPopupConfig('pc_top/enable_top_content');
+$popupMaxWidth = $_config->getPopupConfig('pc_general/popup_max_width');
+$popupDelay    = $_config->getPopupConfig('pc_general/popup_delay');
+$showAgain     = $_config->getPopupConfig('pc_general/show_again');
+$leftcfg       = $_config->getPopupConfig('pc_left/enable_left_content');
+$centercfg     = $_config->getPopupConfig('pc_center/enable_center_content');
+$rightcfg      = $_config->getPopupConfig('pc_right/enable_right_content');
+$bottomcfg     = $_config->getPopupConfig('pc_bottom/enable_bottom_content');
+$topData       = $_config->getPopupConfig('pc_top/top_data');
+$leftData      = $_config->getPopupConfig('pc_left/left_data');
+$centerData    = $_config->getPopupConfig('pc_center/center_data');
+$rightData     = $_config->getPopupConfig('pc_right/right_data');
+$bottomData    = $_config->getPopupConfig('pc_bottom/bottom_data');
+?>
+<div style="display: none;">
+    <div id="popup-content-modal" class="popup-content-container">
+        <?php if ($topcfg) { ?>
+            <div class="p-top-container">
+                <?php echo $block->getContent($topData); ?>
+            </div>
+        <?php } ?>
+
+        <div class="middle-container">
+            <?php if ($leftcfg) { ?>
+                <div class="p-left-container"
+                     style="width: <?php echo $_config->getPopupConfig('pc_left/left_width') ?>">
+                    <?php echo $block->getContent($leftData); ?>
+                </div>
+            <?php } ?>
+
+            <?php if ($centercfg) { ?>
+                <div class="p-center-container"
+                     style="width: <?php echo $_config->getPopupConfig('pc_center/center_width') ?>">
+                    <?php echo $block->getContent($centerData); ?>
+                </div>
+            <?php } ?>
+
+            <?php if ($rightcfg) { ?>
+                <div class="p-right-container"
+                     style="width: <?php echo $_config->getPopupConfig('pc_right/right_width') ?>">
+                    <?php echo $block->getContent($rightData); ?>
+                </div>
+            <?php } ?>
+        </div>
+
+        <?php if ($bottomcfg) { ?>
+            <div class="p-bottom-container">
+                <?php echo $block->getContent($bottomData); ?>
+            </div>
+        <?php } ?>
+
+        <?php if ($showAgain) { ?>
+            <div class="dont-show-again">
+                <input type="checkbox" id="dont-show-again" name="dont-show-again">
+                <label for="dont-show-again"><?php echo __("Don't show this popup again.") ?></label>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+
+<style>
+    <?php if($popupMaxWidth) {?>
+    .tf-popup-content-modal .modal-inner-wrap {
+        max-width: <?php echo $popupMaxWidth; ?>;
+    }
+
+    <?php } ?>
+</style>
+
+<script>
+    require([
+            'jquery',
+            'mage/cookies',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function ($, modal) {
+            var autoOpen;
+            var cookiePopup = jQuery.cookie('content_popup');
+
+            if (cookiePopup == null || cookiePopup != 'dont-shown') {
+                autoOpen = true;
+            } else {
+                autoOpen = false;
+            }
+
+            setTimeout(function () {
+                var modalContent = $('#popup-content-modal').modal({
+                    type: 'popup',
+                    responsive: true,
+                    innerScroll: true,
+                    title: '',
+                    modalClass: 'tf-popup-content-modal',
+                    autoOpen: autoOpen,
+                    buttons: []
+                });
+
+                modalContent.on('modalclosed', function () {
+                    <?php if ($showAgain) { ?>
+                    if ($('#dont-show-again').is(':checked')) {
+                        jQuery.cookie('content_popup', 'dont-shown');
+                    }
+                    <?php } else {?>
+                    jQuery.cookie('content_popup', 'dont-shown');
+                    <?php } ?>
+                });
+            }, <?php echo $popupDelay; ?>);
+        }
+    );
+</script>
+

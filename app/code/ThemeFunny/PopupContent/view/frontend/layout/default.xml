@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ThemeFunny
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the themefunny.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.themefunny.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ThemeFunny
+ * @package     ThemeFunny_PopupContent
+ * @copyright   Copyright (c) ThemeFunny (https://www.themefunny.com/)
+ * @license     https://www.themefunny.com/LICENSE.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.bottom">
+            <block class="ThemeFunny\PopupContent\Block\Content" name="popup.content"
+                   ifconfig="popup_content/pc_general/enable_popup_content">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="helper"
+                              helper="ThemeFunny\PopupContent\Helper\Data::getTemplate"></argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

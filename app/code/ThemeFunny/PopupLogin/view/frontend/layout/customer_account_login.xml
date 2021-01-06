@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ThemeFunny
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the themefunny.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.themefunny.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ThemeFunny
+ * @package     ThemeFunny_PopupLogin
+ * @copyright   Copyright (c) ThemeFunny (https://www.themefunny.com/)
+ * @license     https://www.themefunny.com/LICENSE.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="popup.login.register" remove="true"/>
+        <referenceContainer name="page.bottom">
+            <block class="ThemeFunny\PopupLogin\Block\PopupLogin" name="popup.login.register.login.page"
+                   template="popup-register.phtml"
+                   ifconfig="popup_login_register/popup_general/enable_popup_login_register">
+                <block class="Magento\Customer\Block\Form\Register" name="customer.form.register.login.page"
+                       template="ThemeFunny_PopupLogin::form/register.phtml">
+                    <arguments>
+                        <argument name="attribute_data" xsi:type="object">
+                            Magento\Customer\Block\DataProviders\AddressAttributeData
+                        </argument>
+                    </arguments>
+                    <block class="Magento\Captcha\Block\Captcha" name="captcha.create.popup" after="-"
+                           cacheable="false">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">user_create</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                    <block class="Magento\ReCaptchaUi\Block\ReCaptcha"
+                           name="recaptcha.popup"
+                           after="-"
+                           template="Magento_ReCaptchaFrontendUi::recaptcha.phtml"
+                           ifconfig="recaptcha_frontend/type_for/customer_login">
+                        <arguments>
+                            <argument name="recaptcha_for" xsi:type="string">customer_create</argument>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="recaptcha" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magento_ReCaptchaFrontendUi/js/reCaptcha</item>
+                                    </item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
+                    <container name="customer.form.register.fields.before" as="form_fields_before"
+                               label="Form Fields Before" htmlTag="div" htmlClass="customer-form-before"/>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

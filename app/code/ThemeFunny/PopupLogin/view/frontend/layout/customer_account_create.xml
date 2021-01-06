@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ThemeFunny
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the themefunny.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.themefunny.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ThemeFunny
+ * @package     ThemeFunny_PopupLogin
+ * @copyright   Copyright (c) ThemeFunny (https://www.themefunny.com/)
+ * @license     https://www.themefunny.com/LICENSE.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="popup.login.register" remove="true"/>
+        <referenceContainer name="page.bottom">
+            <block class="ThemeFunny\PopupLogin\Block\PopupLogin" name="popup.login.register.create.page"
+                   template="popup-login.phtml"
+                   ifconfig="popup_login_register/popup_general/enable_popup_login_register">
+                <block class="Magento\Customer\Block\Form\Login" name="customer.form.login.create.page"
+                       template="ThemeFunny_PopupLogin::form/login.phtml">
+                    <block class="Magento\Captcha\Block\Captcha" name="captcha.login.popup" after="-" cacheable="false">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">user_login</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                    <block class="Magento\ReCaptchaUi\Block\ReCaptcha"
+                           name="recaptcha.popup.login"
+                           after="-"
+                           template="Magento_ReCaptchaFrontendUi::recaptcha.phtml"
+                           ifconfig="recaptcha_frontend/type_for/customer_login">
+                        <arguments>
+                            <argument name="recaptcha_for" xsi:type="string">customer_login</argument>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="recaptcha" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magento_ReCaptchaFrontendUi/js/reCaptcha</item>
+                                    </item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

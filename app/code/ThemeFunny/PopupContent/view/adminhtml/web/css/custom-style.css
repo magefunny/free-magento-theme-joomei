@@ -1,0 +1,23 @@
+#row_popup_content_pc_top_top_data .mce-panel,
+#row_popup_content_pc_left_left_data .mce-panel,
+#row_popup_content_pc_center_center_data .mce-panel,
+#row_popup_content_pc_right_right_data .mce-panel,
+#row_popup_content_pc_bottom_bottom_data .mce-panel {
+    display: block !important;
+}
+
+#row_popup_content_pc_top_top_data textarea,
+#row_popup_content_pc_left_left_data textarea,
+#row_popup_content_pc_center_center_data textarea,
+#row_popup_content_pc_right_right_data textarea,
+#row_popup_content_pc_bottom_bottom_data textarea {
+    display: block !important;
+}
+
+#row_popup_content_pc_top_top_data .mce-panel + textarea,
+#row_popup_content_pc_left_left_data .mce-panel + textarea,
+#row_popup_content_pc_center_center_data .mce-panel + textarea,
+#row_popup_content_pc_right_right_data .mce-panel + textarea,
+#row_popup_content_pc_bottom_bottom_data .mce-panel + textarea {
+    display: none !important;
+}

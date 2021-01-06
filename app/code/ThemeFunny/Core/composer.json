@@ -1,0 +1,23 @@
+{
+  "name": "themefunny/module-core",
+  "description": "ThemeFunny Core for Magento 2",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "ThemeFunny",
+      "email": "support@themefunny.com",
+      "homepage": "https://www.themefunny.com",
+      "role": "Technical Support"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "ThemeFunny\\Core\\": ""
+    }
+  }
+}

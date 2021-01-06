@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="themedesign" translate="label" type="text" sortOrder="550" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Design</label>
+            <tab>themefunny</tab>
+            <resource>ThemeFunny_Joomei::design</resource>
+            <group id="design_general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+
+                <field id="dropdown_search" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Dropdown Search Content</label>
+                    <source_model>ThemeFunny\Joomei\Model\Config\Source\CmsBlocks</source_model>
+                </field>
+
+                <field id="footer_content" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Content</label>
+                    <source_model>ThemeFunny\Joomei\Model\Config\Source\CmsBlocks</source_model>
+                </field>
+            </group>
+
+            <group id="design_menu" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Navigation</label>
+
+                <field id="menu_breakpoint" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Screen Breakpoints</label>
+                </field>
+
+                <field id="menu_items" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Megamenu Items</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

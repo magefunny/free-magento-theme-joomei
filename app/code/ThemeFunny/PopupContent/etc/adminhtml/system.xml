@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ThemeFunny
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the themefunny.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.themefunny.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ThemeFunny
+ * @package     ThemeFunny_PopupContent
+ * @copyright   Copyright (c) ThemeFunny (https://www.themefunny.com/)
+ * @license     https://www.themefunny.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="popup_content" translate="label" type="text" sortOrder="550" showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Popup Content</label>
+            <tab>themefunny</tab>
+            <resource>ThemeFunny_PopupContent::popupcontent</resource>
+            <group id="pc_general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+
+                <field id="enable_popup_content" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Popup Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="popup_max_width" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Popup Width</label>
+                    <comment>Unit(px). Example: 1024px</comment>
+                </field>
+
+                <field id="popup_delay" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Time Delay</label>
+                    <validate>integer required-entry validate-number</validate>
+                    <comment>Unit(milliseconds). Example: 5000</comment>
+                </field>
+
+                <field id="shown_home_only" translate="label" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show only for Home page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If this option is: Yes, Popup will only show on the homepage (Default Popup will show on
+                        all pages)
+                    </comment>
+                </field>
+
+                <field id="show_again" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Popup again</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When you chose this option. The popup will display again when switching to another page. In
+                        the popup, there will be another checkbox with the content: Do not show this popup again, when
+                        the user chooses, the popup will not show again.
+                    </comment>
+                </field>
+            </group>
+
+            <group id="pc_top" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Top Content</label>
+
+                <field id="enable_top_content" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Top Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="top_data" translate="label comment" sortOrder="15" type="editor" showInStore="1"
+                       showInDefault="1">
+                    <label>Content</label>
+                    <frontend_model>ThemeFunny\PopupContent\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <depends>
+                        <field id="enable_top_content">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="pc_left" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Left Content</label>
+
+                <field id="enable_left_content" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Left Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="left_width" translate="label" type="select" sortOrder="12" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <source_model>ThemeFunny\PopupContent\Model\Config\Source\Width</source_model>
+                    <depends>
+                        <field id="enable_left_content">1</field>
+                    </depends>
+                </field>
+
+                <field id="left_data" translate="label comment" sortOrder="15" type="editor" showInStore="1"
+                       showInDefault="1">
+                    <label>Content</label>
+                    <frontend_model>ThemeFunny\PopupContent\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <depends>
+                        <field id="enable_left_content">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="pc_center" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Center Content</label>
+
+                <field id="enable_center_content" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Center Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="center_width" translate="label" type="select" sortOrder="12" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <source_model>ThemeFunny\PopupContent\Model\Config\Source\Width</source_model>
+                    <depends>
+                        <field id="enable_center_content">1</field>
+                    </depends>
+                </field>
+
+                <field id="center_data" translate="label comment" sortOrder="15" type="editor" showInStore="1"
+                       showInDefault="1">
+                    <label>Content</label>
+                    <frontend_model>ThemeFunny\PopupContent\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <depends>
+                        <field id="enable_center_content">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="pc_right" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Right Content</label>
+
+                <field id="enable_right_content" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Right Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="right_width" translate="label" type="select" sortOrder="12" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <source_model>ThemeFunny\PopupContent\Model\Config\Source\Width</source_model>
+                    <depends>
+                        <field id="enable_right_content">1</field>
+                    </depends>
+                </field>
+
+                <field id="right_data" translate="label comment" sortOrder="15" type="editor" showInStore="1"
+                       showInDefault="1">
+                    <label>Content</label>
+                    <frontend_model>ThemeFunny\PopupContent\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <depends>
+                        <field id="enable_right_content">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="pc_bottom" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Bottom Content</label>
+
+                <field id="enable_bottom_content" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Bottom Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="bottom_data" translate="label comment" sortOrder="15" type="editor" showInStore="1"
+                       showInDefault="1">
+                    <label>Content</label>
+                    <frontend_model>ThemeFunny\PopupContent\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <depends>
+                        <field id="enable_bottom_content">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

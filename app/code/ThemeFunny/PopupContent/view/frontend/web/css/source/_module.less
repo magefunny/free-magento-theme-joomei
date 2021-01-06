@@ -1,0 +1,68 @@
+/**
+ * Popup Content
+ */
+& when (@media-common = true) {
+    .popup-content-container {
+        .block.newsletter {
+            width: unset;
+            max-width: unset;
+        }
+
+        .block.newsletter .actions,
+        .block.newsletter .field.newsletter {
+            display: table-cell;
+            float: none !important;
+            width: auto;
+            max-width: unset !important;
+            vertical-align: top;
+        }
+
+        .block.newsletter .field.newsletter {
+            width: 100%;
+        }
+    }
+
+    .dont-show-again {
+        clear: both;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+        margin-top: 20px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .popup-content-container {
+        .middle-container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .p-left-container,
+        .p-center-container,
+        .p-right-container {
+            padding: 0 15px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .popup-content-container {
+        .middle-container {
+            display: block;
+        }
+
+        .p-left-container,
+        .p-center-container,
+        .p-right-container {
+            clear: both;
+            width: 100% !important;
+        }
+    }
+}

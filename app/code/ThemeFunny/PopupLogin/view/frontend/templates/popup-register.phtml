@@ -1,0 +1,70 @@
+<?php
+/**
+ * ThemeFunny
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the themefunny.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.themefunny.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    ThemeFunny
+ * @package     ThemeFunny_PopupLogin
+ * @copyright   Copyright (c) ThemeFunny (https://www.themefunny.com/)
+ * @license     https://www.themefunny.com/LICENSE.txt
+ */
+$loggedIn = $block->customerLoggedIn();
+?>
+<?php if ($loggedIn == false) { ?>
+    <div style="display: none;">
+        <div id="popup-login-modal" class="popup-login-container">
+            <div id="popup_tabs" class="popup-login-tabs">
+                <div class="popup-tabs-content">
+                    <?= $block->getChildHtml("customer.form.register.login.page") ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        require([
+                'jquery',
+                'jquery/ui',
+                'Magento_Ui/js/modal/modal'
+            ],
+            function ($, tabs, modal) {
+                $("#popup_tabs").tabs();
+                var options = {
+                    type: 'popup',
+                    responsive: true,
+                    innerScroll: true,
+                    title: $.mage.__('New Customers'),
+                    modalClass: 'popup-login-modal',
+                    buttons: [{
+                        text: $.mage.__('Close'),
+                        class: '',
+                        click: function () {
+                            this.closeModal();
+                        }
+                    }]
+                };
+
+                var popup = modal(options, $('#popup-login-modal'));
+
+                $('.header.links a[href*="customer/account/create"], .block-new-customer .primary a[href*="customer/account/create"]').attr("href", "javascript:void(0)").addClass('button-popup-create');
+
+                $(".button-popup-create").on('click', function () {
+                    $("#tab-create > a").trigger("click");
+                    $("#popup-login-modal").modal("openModal");
+                });
+            }
+        );
+    </script>
+
+<?php } ?>

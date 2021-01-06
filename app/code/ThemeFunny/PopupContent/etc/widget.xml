@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="tf_pupup_newsletter" class="ThemeFunny\PopupContent\Block\Widget\SubscribeWidget">
+        <label translate="true">ThemeFunny - Widget Newsletter</label>
+        <description translate="true">ThemeFunny - Widget Newsletter</description>
+    </widget>
+</widgets>
