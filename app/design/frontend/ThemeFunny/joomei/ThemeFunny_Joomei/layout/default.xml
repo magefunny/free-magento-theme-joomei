@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_width" xsi:type="number">116</argument>
+                <argument name="logo_height" xsi:type="number">46</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Wishlist\Block\Customer\Sidebar" name="wishlist_header" as="wishlist.header"
+                   template="Magento_Wishlist::wishlist-header.phtml"/>
+        </referenceContainer>
+
+        <referenceBlock name="top.search">
+            <block class="Magento\Framework\View\Element\Template" name="search.dropdown"
+                   template="ThemeFunny_Joomei::html/search-dropdown.phtml"/>
+        </referenceBlock>
+
+        <referenceBlock name="top.links">
+            <block class="Magento\Customer\Block\Account\Customer" name="custom.links" template="ThemeFunny_Joomei::links/custom-links.phtml"/>
+        </referenceBlock>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer.cms"
+                   template="ThemeFunny_Joomei::html/footer-cms.phtml"/>
+        </referenceContainer>
+
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true"/>
+    </body>
+</page>

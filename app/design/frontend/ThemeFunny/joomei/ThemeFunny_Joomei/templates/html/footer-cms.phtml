@@ -1,0 +1,4 @@
+<?php
+$_config   = $this->helper('ThemeFunny\Joomei\Helper\Data');
+$footerCms = $_config->getDesignConfig('design_general/footer_content');
+echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($footerCms)->toHtml();

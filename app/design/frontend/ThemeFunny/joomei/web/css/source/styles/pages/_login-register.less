@@ -1,0 +1,177 @@
+& when (@media-common = true) {
+    .customer-account-login {
+        .page-main > .page.messages {
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .customer-account-create {
+        .page-main > .page.messages {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .show-element {
+        position: relative;
+    }
+
+    .show-pass {
+        display: block;
+        width: 26px;
+        height: 26px;
+        text-align: center;
+        line-height: 26px;
+        position: absolute;
+        top: 10px;
+        right: 6px;
+        cursor: pointer;
+        z-index: 4;
+
+        &:before {
+            .custom-icon(e900, 18px);
+        }
+
+        &.active:before {
+            .custom-icon(e901, 18px);
+        }
+    }
+
+    /**
+     * Create account
+     */
+
+    .customer-account-create {
+        background-color: @second-page__background;
+
+        .form-create-account {
+            margin-left: auto;
+            margin-right: auto;
+
+            .fieldset {
+                background-color: #fff;
+                padding: 30px;
+            }
+        }
+    }
+
+    .password-strength-meter {
+        display: none;
+    }
+
+    .password-strength-meter:before,
+    .form-create-account .fieldset.create.account:after {
+        display: none;
+    }
+
+    .password-strength-meter {
+        background: none;
+        height: auto;
+        line-height: unset;
+        padding: 5px 0 0;
+        font-size: 12px;
+        text-align: right;
+    }
+
+    .account .legend > span {
+        font-size: initial;
+    }
+
+    .fieldset.create.info {
+        .field-name-firstname {
+            float: left;
+            width: 50%;
+            padding-right: 10px;
+        }
+
+        .field-name-lastname {
+            float: right;
+            width: 50%;
+            padding-left: 10px;
+        }
+
+        .field.choice.newsletter {
+            clear: both;
+        }
+    }
+
+    /**
+     * Login
+     */
+
+    .multishipping-checkout-login,
+    .customer-account-create,
+    .customer-account-login {
+        .page-title-wrapper {
+            text-align: center;
+            padding-top: 20px;
+
+            h1 {
+                margin-bottom: 5px !important;
+            }
+
+            .title-note {
+                margin-bottom: 25px;
+            }
+
+            .title-note a {
+                text-decoration: underline;
+            }
+
+            .title-note a:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .multishipping-checkout-login,
+    .customer-account-login {
+        background-color: @second-page__background;
+
+        .fieldset.login {
+            background-color: #fff;
+            padding: 30px;
+        }
+
+        .block-new-customer {
+            display: none;
+        }
+
+        .block-customer-login {
+            width: 100% !important;
+            max-width: 500px;
+            margin: 0 auto;
+            float: none !important;
+        }
+
+        .field.note {
+            display: none;
+        }
+
+        .login-container .fieldset:after,
+        .login-container .block .block-title {
+            display: none;
+        }
+
+        .login-container .fieldset > .field > .control {
+            width: 100%;
+        }
+    }
+
+    .login-container {
+        .actions-toolbar .action.primary {
+            padding: @button-larger__padding;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .login-container .block-customer-login {
+        .actions-toolbar .secondary a.action {
+            margin-top: 17px;
+        }
+    }
+}

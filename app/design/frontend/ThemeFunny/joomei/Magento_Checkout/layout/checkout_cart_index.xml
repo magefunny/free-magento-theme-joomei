@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="checkout.cart.container">
+            <container name="cart.summary.container" as="cart.summary.container" label="Cart Summary Container"
+                       htmlTag="div" htmlClass="summary-container" after="checkout.cart.form"/>
+        </referenceContainer>
+
+        <referenceBlock name="checkout.cart.crosssell">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Catalog::product/list/items-crossell.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <move element="cart.summary" destination="cart.summary.container" before="-"/>
+        <move element="checkout.cart.coupon" destination="cart.summary.container" after="cart.summary"/>
+    </body>
+</page>

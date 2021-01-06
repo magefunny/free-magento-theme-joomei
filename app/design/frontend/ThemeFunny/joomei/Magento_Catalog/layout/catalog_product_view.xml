@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="top.content.theme" htmlTag="div" htmlClass="top-content-product" before="-"/>
+            <container name="sidebar.content.theme" htmlTag="div" htmlClass="sidebar-content-product">
+                <block class="Magento\Cms\Block\Block" name="sidebar-top-detail">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">sidebar-top-detail</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="catalog.product.related">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Catalog::product/list/items-related.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <referenceBlock name="product.info.upsell">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Catalog::product/list/items-upsell.phtml</argument>
+            </action>
+        </referenceBlock>
+
+        <move element="product.info.media" destination="top.content.theme" before="-"/>
+        <move element="product.info.main" destination="top.content.theme" after="product.info.media"/>
+        <move element="sidebar.content.theme" destination="top.content.theme" after="-"/>
+
+        <move element="catalog.product.related" destination="content" after="top.content.theme"/>
+        <move element="product.info.details" destination="content" after="catalog.product.related"/>
+        <move element="product.info.upsell" destination="content" after="product.info.details"/>
+        <move element="product.info.addto" destination="product.info.main" after="-"/>
+        <move element="view.addto.wishlist" destination="product.info.media" after="-"/>
+        <move element="view.addto.compare" destination="page.main.title" after="-"/>
+    </body>
+</page>

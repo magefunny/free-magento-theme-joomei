@@ -1,0 +1,87 @@
+& when (@media-common = true) {
+    .breadcrumbs .items {
+        font-size: 1.3rem;
+    }
+
+    .catalog-category-view {
+        .products.wrapper ~ .toolbar {
+            .limiter,
+            .title-toolbar .page-title {
+                display: none;
+            }
+        }
+
+        .pages-items {
+            vertical-align: top;
+        }
+
+        .pages-items .item strong, .pages-items .item a {
+            min-width: 46px;
+            height: 46px;
+            line-height: 46px;
+            border: none !important;
+            background-color: #eee !important;
+            color: @text__color !important;
+            font-weight: 400;
+            .border-radius(23px);
+            .box-shadow-none();
+            .transition(.1s);
+        }
+
+        .pages-items .item strong,
+        .pages-items .item a:hover {
+            background-color: #ddd !important;
+        }
+
+        .pages .action:before {
+            color: @text__color !important;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .catalog-category-view {
+        .page-title-wrapper {
+            display: none;
+        }
+
+        .toolbar {
+            .modes {
+                float: right;
+                margin: 7px 0 0 20px;
+            }
+
+            .title-toolbar {
+                float: left;
+            }
+
+            .title-toolbar .page-title {
+                margin: 0;
+                font-size: 24px;
+                padding-top: 10px;
+            }
+        }
+
+        .products.wrapper ~ .toolbar {
+            .title-toolbar .page-title {
+                display: none;
+            }
+
+            .pages {
+                float: none;
+            }
+
+            .pages-items .item {
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .title-toolbar {
+        display: none;
+    }
+}

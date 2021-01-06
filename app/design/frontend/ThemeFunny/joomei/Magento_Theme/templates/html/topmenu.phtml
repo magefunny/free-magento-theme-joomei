@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+
+$columnsLimit     = $block->getColumnsLimit() ?: 0;
+$_menuHtml        = $block->getHtml('level-top', 'submenu', $columnsLimit);
+$_config          = $this->helper('ThemeFunny\Joomei\Helper\Data');
+$menuItems        = $_config->getDesignConfig('design_menu/menu_items');
+$screenBreakpoint = $_config->getDesignConfig('design_menu/menu_breakpoint');
+?>
+
+<nav class="navigation" data-action="navigation" data-breakpoint="<?php echo $screenBreakpoint; ?>">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?= /* @noEscape */
+        $_menuHtml ?>
+        <?= $block->getChildHtml() ?>
+    </ul>
+</nav>
+<script>
+    requirejs(['require', 'jquery', 'masonry'],
+        function (require, $, Masonry) {
+            require(['jquery-bridget/jquery-bridget'],
+                function (jQueryBridget) {
+                    var wdWidth = $(window).width();
+                    if (wdWidth >= <?php echo $screenBreakpoint?>) {
+                        $('<?php echo $menuItems;?>').addClass('show-all-items');
+                        jQueryBridget('masonry', Masonry, $);
+                        $('.navigation > ul > li.show-all-items > ul').masonry({
+                            itemSelector: '.navigation > ul > li.show-all-items > ul > li',
+                            percentPosition: true
+                        })
+                    }
+                });
+        });
+</script>

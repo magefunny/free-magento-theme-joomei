@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <media>
+        <images module="Magento_Catalog">
+            <image id="category_page_grid" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="related_products_list" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="upsell_products_list" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="cart_cross_sell_products" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="wishlist_thumbnail" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="product_swatch_image_large" type="image"/>
+            <image id="product_swatch_image_medium" type="image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="product_page_more_views" type="thumbnail">
+                <width>110</width>
+                <height>110</height>
+            </image>
+
+            <image id="product_page_image_small" type="thumbnail">
+                <width>110</width>
+                <height>110</height>
+            </image>
+
+            <image id="new_products_content_widget_grid" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="recently_viewed_products_grid_content_widget" type="small_image">
+                <width>330</width>
+                <height>330</height>
+            </image>
+
+            <image id="recently_viewed_products_images_names_widget" type="small_image">
+                <width>80</width>
+                <height>80</height>
+            </image>
+
+            <image id="cart_page_product_thumbnail" type="small_image">
+                <width>80</width>
+                <height>80</height>
+            </image>
+
+            <image id="product_page_image_large" type="image"/>
+            <image id="product_page_image_medium" type="image">
+                <width>500</width>
+                <height>500</height>
+            </image>
+
+            <image id="product_page_more_views" type="thumbnail">
+                <width>70</width>
+                <height>70</height>
+            </image>
+
+            <image id="product_page_image_small" type="thumbnail">
+                <width>70</width>
+                <height>70</height>
+            </image>
+        </images>
+
+        <images module="Magento_Catalog">
+            <image id="swatch_image" type="swatch_image">
+                <width>40</width>
+                <height>40</height>
+            </image>
+            <image id="swatch_thumb" type="swatch_thumb">
+                <width>110</width>
+                <height>110</height>
+            </image>
+            <image id="swatch_image_base" type="swatch_image">
+                <width>40</width>
+                <height>40</height>
+            </image>
+            <image id="swatch_thumb_base" type="swatch_thumb">
+                <width>110</width>
+                <height>110</height>
+            </image>
+        </images>
+    </media>
+
+    <vars module="Magento_Catalog">
+        <!-- Gallery and magnifier theme settings. Start -->
+        <var name="gallery">
+            <var name="navdir">horizontal</var>
+        </var>
+
+        <var name="magnifier">
+            <var name="enabled">true</var>
+            <var name="width">430</var>
+            <var name="mode">outside</var>
+        </var>
+
+        <var name="breakpoints">
+            <var name="mobile">
+                <var name="conditions">
+                    <var name="max-width">767px</var>
+                </var>
+            </var>
+        </var>
+    </vars>
+</view>

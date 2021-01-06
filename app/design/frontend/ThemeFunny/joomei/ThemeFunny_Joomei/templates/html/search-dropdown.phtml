@@ -1,0 +1,4 @@
+<?php
+$_config        = $this->helper('ThemeFunny\Joomei\Helper\Data');
+$searchDropdown = $_config->getDesignConfig('design_general/dropdown_search');
+echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($searchDropdown)->toHtml();

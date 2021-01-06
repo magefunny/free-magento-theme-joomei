@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'Custom-Icons';
+  src:  url('fonts/Custom-Icons.eot?en5i41');
+  src:  url('fonts/Custom-Icons.eot?en5i41#iefix') format('embedded-opentype'),
+    url('fonts/Custom-Icons.ttf?en5i41') format('truetype'),
+    url('fonts/Custom-Icons.woff?en5i41') format('woff'),
+    url('fonts/Custom-Icons.svg?en5i41#Custom-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Custom-Icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down:before {
+  content: "\e90d";
+}
+.icon-arrow-left:before {
+  content: "\e90e";
+}
+.icon-arrow-right:before {
+  content: "\e90f";
+}
+.icon-arrow-up:before {
+  content: "\e910";
+}
+.icon-check:before {
+  content: "\e911";
+}
+.icon-shopping-bag:before {
+  content: "\e912";
+}
+.icon-package:before {
+  content: "\e908";
+}
+.icon-smartphone:before {
+  content: "\e909";
+}
+.icon-trello:before {
+  content: "\e90a";
+}
+.icon-truck:before {
+  content: "\e90b";
+}
+.icon-twitch:before {
+  content: "\e90c";
+}
+.icon-done_all:before {
+  content: "\e907";
+}
+.icon-shopping-cart:before {
+  content: "\e904";
+}
+.icon-eye:before {
+  content: "\e900";
+}
+.icon-eye-off:before {
+  content: "\e901";
+}
+.icon-filter:before {
+  content: "\e902";
+}
+.icon-phone-call:before {
+  content: "\e903";
+}
+.icon-settings:before {
+  content: "\e905";
+}
+.icon-heart-outline:before {
+  content: "\e906";
+}

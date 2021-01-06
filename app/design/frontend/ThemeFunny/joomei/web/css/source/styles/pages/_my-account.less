@@ -1,0 +1,113 @@
+& when (@media-common = true) {
+    .box-information .box-content,
+    .box-billing-address .box-content,
+    .box-shipping-address .box-content {
+        font-size: unset !important;
+    }
+
+    .account .column.main .block:not(.widget) .block-title > strong {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .account .column.main .block:not(.widget) .box-title > span {
+        font-size: unset;
+    }
+
+    .form-address-edit .actions-toolbar .action.primary {
+        font-size: unset;
+    }
+
+    .password-info {
+        a {
+            text-decoration: underline;
+            color: @theme__color__primary;
+
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .account .table-wrapper {
+        border: none;
+    }
+
+    .order-details-items .product-item-name {
+        font-size: unset;
+    }
+
+    .order-products-toolbar .toolbar-amount {
+        display: none;
+    }
+
+    .customer-review.view {
+        .review-details .rating-result {
+            position: relative;
+            top: 6px;
+        }
+    }
+
+    .page-title-wrapper {
+        .return-status, .order-status {
+            margin-top: 0;
+            text-transform: unset;
+        }
+    }
+
+    .order-links .item strong {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .order-details-items .col.subtotal .price-excluding-tax,
+    .order-details-items .col.price .price-excluding-tax {
+        font-size: unset;
+    }
+
+    .customer-addresses-toolbar .toolbar-amount {
+        display: none !important;
+    }
+}
+
+/**
+ * Desktop
+ */
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .account.page-layout-2columns-left .sidebar-main,
+    .account.page-layout-2columns-left .sidebar-additional {
+        width: @sidebar__theme-width;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .account.page-layout-2columns-left .column.main {
+        width: calc(~"100% - 30px -" @sidebar__theme-width);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .box-address-shipping .box-content,
+    .box-address-billing .box-content {
+        font-size: unset;
+    }
+}
+
+/**
+ * Mobile
+ */
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .account .column.main {
+        margin-bottom: 30px !important;
+    }
+    .block-collapsible-nav {
+        top: 0;
+    }
+
+    .account .page-main, .cms-privacy-policy .page-main {
+        padding-top: 60px;
+    }
+}

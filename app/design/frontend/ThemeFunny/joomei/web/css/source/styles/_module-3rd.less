@@ -1,0 +1,30 @@
+& when (@media-common = true) {
+    /**
+     * BSS lazyload image
+     */
+
+    .product-image-wrapper {
+        background-color: #eee;
+    }
+
+    img.lazy {
+        opacity: 1 !important;
+    }
+
+    /**
+     * ThemeFunny - PopupLogin
+     */
+
+    .popup-tabs-content {
+        .actions-toolbar .primary button {
+            padding: @button-larger__padding;
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .popup-login-container .actions-toolbar .secondary a.action {
+        margin-top: 18px;
+    }
+}

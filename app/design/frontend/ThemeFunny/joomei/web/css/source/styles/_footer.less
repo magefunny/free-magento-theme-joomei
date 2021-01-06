@@ -1,0 +1,119 @@
+& when (@media-common = true) {
+    .page-footer {
+        background-color: #222222 !important;
+        margin: 0;
+        padding: 0 !important;
+        color: #aaa;
+
+        a {
+            color: #aaa;
+        }
+
+        a:hover {
+            color: @theme__color__primary;
+        }
+    }
+
+    .footer.content {
+        max-width: unset !important;
+        padding: 0 !important;
+    }
+
+    .footer-top {
+        background-color: #ececec;
+        padding: 50px 0;
+        color: #444;
+
+        a {
+            color: #444;
+        }
+    }
+
+    /**
+     * Newsletter
+     */
+
+    .newsletter-footer {
+        .block-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 9px;
+        }
+
+        .newsletter-text {
+            margin-bottom: 10px;
+            max-width: 560px;
+        }
+
+        .newsletter-note {
+            font-size: 1.2rem;
+        }
+
+        .newsletter-note a {
+            color: @theme__color__primary;
+            text-decoration: underline;
+        }
+
+        .newsletter-note a:hover {
+            text-decoration: none;
+        }
+
+        .block.newsletter {
+            float: none;
+            max-width: unset;
+            width: 100%;
+            margin-bottom: 0;
+            margin-top: -7px;
+        }
+
+        .block.newsletter .form.subscribe > .field {
+            padding-right: 10px;
+            max-width: unset;
+        }
+
+        .block.newsletter .form.subscribe > .field,
+        .block.newsletter .form.subscribe > .actions {
+            float: none;
+        }
+
+        .block.newsletter .action.subscribe {
+            .border-radius(2px);
+        }
+    }
+
+    .footer-middle {
+        padding: 60px 0 53px;
+    }
+
+    /**
+     * Block footer
+     */
+
+    .block-footer {
+        .block-title {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+    }
+
+    .footer.content .list-footer-links li {
+        margin-bottom: 5px;
+
+        a {
+            display: table;
+            padding: 3px 0;
+        }
+
+    }
+
+    .copyright {
+        background-color: #222;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        color: #aaa;
+        padding: 30px 0;
+        font-size: unset;
+    }
+}

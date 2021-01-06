@@ -1,0 +1,202 @@
+& when (@media-common = true) {
+    .cms-index-index {
+        .nav-sections {
+            margin-bottom: 0;
+        }
+
+        .page-main {
+            max-width: unset;
+            margin: 0;
+            padding: 0;
+        }
+
+        .columns .column.main {
+            padding: 0;
+        }
+    }
+
+    /**
+     * Categories
+     */
+
+    .featured-cats {
+        text-align: center;
+
+        .cat-title {
+            font-size: 30px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .cat-title img {
+            vertical-align: middle;
+        }
+
+        .cat-title span {
+            font-style: italic;
+            font-weight: 700;
+            color: @theme__color__primary;
+        }
+
+        .list-cats {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+
+            > li {
+                padding: 0 15px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .img-cat {
+            margin: 0 auto 10px;
+            text-align: center;
+            line-height: 0;
+            background-color: #fff;
+            overflow: hidden;
+            .border-radius(50%);
+        }
+
+        .info-cat strong {
+            font-weight: 500;
+        }
+
+        .info-cat strong a {
+            text-decoration: none;
+            .transition(.1s);
+        }
+
+        .info-cat strong a:after {
+            vertical-align: top;
+            position: relative;
+            line-height: 1;
+            top: 0;
+            left: 0;
+            margin-left: 3px;
+            .custom-icon(e90f, 19px);
+            .transition(.1s);
+        }
+
+        .info-cat strong a:hover:after {
+            left: 3px;
+        }
+    }
+
+    /**
+     * Services
+     */
+
+    .services {
+        text-align: center;
+    }
+
+    .services .list-service {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+
+        > li {
+            padding: 0 15px;
+            margin-bottom: 30px;
+        }
+
+        .sv-title {
+            margin-bottom: 10px;
+        }
+
+        .sv-title strong {
+            position: relative;
+        }
+
+        .sv-title strong:before {
+            position: absolute;
+            left: -27px;
+            top: -9px;
+            color: @theme__color__primary;
+            .custom-icon(e907, 24px);
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    /**
+     * Banner image
+     */
+
+    .banner-image {
+        margin-bottom: 30px;
+
+        a {
+            display: block;
+        }
+
+        a img {
+            vertical-align: top;
+            .border-radius(2px);
+        }
+    }
+
+    /**
+     * Bottom info
+     */
+
+    .bottom-info {
+        .info {
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 32px 0 30px;
+            min-height: 84px;
+            background-color: #ececec;
+        }
+
+        .info img {
+            vertical-align: top;
+            margin: -2px 5px 0;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .featured-cats .list-cats > li {
+        width: 16.6666666666%;
+    }
+
+    .services .list-service > li {
+        width: 33.33333333%;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .services .list-service,
+    .featured-cats .list-cats {
+        margin-left: -1 * @layout__width-xs-indent;
+        margin-right: -1 * @layout__width-xs-indent;
+    }
+
+    .featured-cats .list-cats > li {
+        width: 16.6666666666%;
+    }
+
+    .services .list-service > li {
+        width: 33.33333333%;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .featured-cats .list-cats > li {
+        width: 33.3333%;
+    }
+
+    .services .list-service > li {
+        width: 100%;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .featured-cats .list-cats > li {
+        width: 50%;
+    }
+}

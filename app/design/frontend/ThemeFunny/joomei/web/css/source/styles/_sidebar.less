@@ -1,0 +1,204 @@
+/**
+ * Desktop and mobile
+ */
+& when (@media-common = true) {
+    .sidebar .block:not(.filter) {
+        margin-bottom: 25px;
+
+        .block-title {
+            border: 1px solid @border-color__base;
+            padding: 12px 15px;
+            background-image: linear-gradient(to bottom, #fff 0, #f6f6f6 100%);
+            line-height: 1;
+            margin: 0;
+            position: relative;
+            box-shadow: inset 0 -1px 0 white, 0 2px 6px #eee;
+            -webkit-box-shadow: inset 0 -1px 0 white, 0 2px 6px #eee;
+            .border-radius(4px 4px 0 0);
+        }
+
+        .block-title strong {
+            font-size: unset;
+            font-weight: 600;
+        }
+
+        > .block-content,
+        > .empty {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid @border-color__base;
+            border-top: none;
+            .border-radius(0 0 4px 4px);
+        }
+    }
+
+    .filter-actions {
+        padding: 10px 0 0;
+        text-align: right;
+
+        .filter-clear {
+            display: inline-block;
+            background-color: #fc636b;
+            color: #fff;
+            padding: 5px 13px;
+            .border-radius(@form-element-input__border-radius)
+        }
+    }
+}
+
+/**
+ * Desktop only
+ */
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    /**
+     * Filter sidebar
+     */
+    .sidebar-main .block.filter {
+        padding-top: 8px;
+    }
+
+    .filter .block-subtitle {
+        display: none;
+    }
+
+    .filter-content .item {
+        margin: 5px 0;
+    }
+
+    .filter-options-item {
+        border: none;
+        padding-bottom: 0;
+        border-bottom: 1px solid @border-color__base;
+
+        &:first-child {
+            border-top: 1px solid @border-color__base;
+        }
+
+        &.active {
+            .filter-options-title {
+                padding-bottom: 0;
+                color: @title-block__color
+            }
+
+            .filter-options-title:before {
+                display: none;
+            }
+        }
+    }
+
+    .filter-options-title {
+        padding: 20px 0;
+        text-transform: none;
+        font-weight: 500;
+        font-size: 1.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:after {
+            position: absolute;
+            right: 0;
+            top: 30px;
+            content: "";
+            width: 17px;
+            height: 1px;
+            background: #ddd;
+        }
+
+        &:before {
+            position: absolute;
+            right: 8px;
+            top: 22px;
+            content: "";
+            width: 1px;
+            height: 17px;
+            background: #ddd;
+        }
+    }
+
+    .filter-options-content {
+        padding: 5px 0 10px !important;
+    }
+
+    .filter-options-content a {
+        margin: 0;
+    }
+
+    .filter-options-content .item a {
+        padding: 3px 0 3px 24px;
+        position: relative;
+        text-decoration: none !important;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid @border-color__base;
+            border-radius: 3px;
+            position: absolute;
+            top: 3px;
+            left: 0;
+        }
+
+        &:hover:before {
+            border-color: @theme__color__primary;
+        }
+    }
+
+    .filter-current .items {
+        padding: 5px 0;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .filter-options-content a {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .filter.active .filter-subtitle {
+        background-color: #fff;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .filter.active .filter-title {
+        border: none;
+    }
+
+    .filter-options-title {
+        text-transform: none;
+    }
+
+    .filter-actions,
+    .filter .filter-current {
+        margin-left: -1 * @layout__width-xs-indent;
+        margin-right: -1 * @layout__width-xs-indent;
+    }
+
+    .filter-actions,
+    .filter-current .items,
+    .filter .block-subtitle {
+        padding-left: @layout__width-xs-indent;
+        padding-right: @layout__width-xs-indent;
+    }
+
+    .filter .filter-current.active {
+        padding-bottom: 50px;
+    }
+
+    .filter-actions {
+        margin-top: -60px;
+    }
+
+    .filter-title strong {
+        padding: 14px 10px;
+    }
+
+    .filter.active .filter-title strong {
+        top: 2px;
+    }
+}
