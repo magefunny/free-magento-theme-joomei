@@ -13,6 +13,7 @@ We are willing to fix and update errors that arise. If you have request to chang
 
 <ul>
 <li>Parent theme: Luma</li>
+<li>Simple Megamenu</li>
 <li>Module: ThemeFunny - PopupLogin</li>
 <li>Module: ThemeFunny - PopupContent</li>
 </ul>
