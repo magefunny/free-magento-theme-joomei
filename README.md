@@ -8,7 +8,7 @@ Do not change or change very little core files to ensure compatibility when upgr
 <p>
 
 <p>
-We are willing to fix and update errors that arise. If you have request to change layout or feature. Please contact Email: cuongtd.tran@gmail.com or skype: hoanghondo_nd. We will charge a small fee for these requests
+We are willing to fix and update errors that arise. If you have request to change layout or feature. Please contact Email: cuongtd.tran@gmail.com or skype: hoanghondo_nd.
 </p>
 
 <ul>
