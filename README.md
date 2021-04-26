@@ -1,4 +1,4 @@
-# Free magento2 theme
+# Free magento 2 theme
 <h2><a target="_blank" href="https://www.youtube.com/watch?v=4OVZbocrqOk">DEMO</a></h2>
 <p>
 <strong>ThemeFunny - Joomei</strong> is a <strong>Free Magento 2 Theme</strong> that is ideal for any online stores, especially for digital store, hi-tech store, watch store, clothing store and accessories store or mega store with multi-categories.
